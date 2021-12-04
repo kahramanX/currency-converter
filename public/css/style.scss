@@ -1,0 +1,30 @@
+// reset css
+* {
+    // border-box özelliğinden tam verim alabilmek için * kullanılmalı
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// reset css
+
+// app
+.container {
+    font-family: monospace;
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    //centered
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+    input {
+        width: 50px;
+    }
+}
