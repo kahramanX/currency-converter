@@ -6,7 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
+    <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="../public/images/favicon.ico">
+    <!-- Favicon-->
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts-->
 
     <title>💸Currency Converter💸</title>
 </head>
@@ -14,30 +23,32 @@
 <body>
 
     <div class="container">
+        <form action="/" method="post">
+            <h3>From:</h3>
 
-        <input type="number" min="0" name="" id="curr">
+            <input type="number" min="0" name="value" id="from">
+            <select name="from" id="from">
+                <option value="choose" selected>choose</option>
 
-        <select name="curr" id="curr">
-            <option value="choose" selected>choose</option>
+                <% currencies.forEach(function(curr){ %>
+                <option value="<%= curr %>"><%= curr %></option>
+                <% }) %>
+            </select>
 
-            <% currencies.forEach(function(curr){ %>
-            <option value="<%= curr %>"><%= curr %></option>
-            <% }) %>
+            <h3>TO:</h3>
 
-        </select>
+            <select name="to" id="to">
+                <option value="" selected>choose</option>
+                <% currencies.forEach(function(curr){ %>
+                <option value="<%= curr %>"><%= curr %></option>
+                <% }) %>
+            </select>
 
-        ->
-
-        <input type="number" min="0" name="" id="curr-2">
-
-        <select name="curr-2" id="curr-2">
-            <option value="" selected>choose</option>
-            <% currencies.forEach(function(curr){ %>
-            <option value="<%= curr %>"><%= curr %></option>
-            <% }) %>
-        </select>
-
-
+            <button>Convert</button>
+        </form>
+    </div>
+    <div class="result">
+        <h3>Result:</h3>
     </div>
 
     <script type="module" src="../public/js/script.js"></script>

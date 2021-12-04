@@ -4,18 +4,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 // reset css
+
+body {
+    font-family: 'Inter', sans-serif,
+}
 
 // app
 .container {
-    font-family: monospace;
     width: 40vw;
     height: 20vh;
     border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     //centered
     position: absolute;
     left: 50%;
@@ -26,4 +30,19 @@
     input {
         width: 50px;
     }
+}
+
+.result {
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //centered
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
 }

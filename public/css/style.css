@@ -5,8 +5,11 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: "Inter", sans-serif;
+}
+
 .container {
-  font-family: monospace;
   width: 40vw;
   height: 20vh;
   border: 1px solid red;
@@ -28,5 +31,25 @@
 
 .container input {
   width: 50px;
+}
+
+.result {
+  width: 40vw;
+  height: 20vh;
+  border: 1px solid blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 /*# sourceMappingURL=style.css.map */
