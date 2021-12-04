@@ -1,20 +1,23 @@
 class SelectCurrency {
     constructor() {
-        this.select = document.querySelectorAll('select')[0];
-        console.log(this.select);
+        this.leftSelect = document.querySelectorAll('select')[0];
+        this.rightSelect = document.querySelectorAll('select')[1];
     }
 
     allEventListeners() {
-        console.log(this.select);
-        this.select.addEventListener('change', this.selectChange);
+        this.leftSelect.addEventListener('change', this.leftSelectChange);
+        this.rightSelect.addEventListener('change', this.rightSelectChange);
     }
 
-    selectChange(e) {
+    leftSelectChange(e) {
+        console.log(e.target.value);
+    }
+    rightSelectChange(e) {
         console.log(e.target.value);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    let selectCurr = new SelectCurrency;
-    selectCurr.allEventListeners();
+    let selectCurrency = new SelectCurrency;
+    selectCurrency.allEventListeners();
 })
