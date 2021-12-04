@@ -3,8 +3,6 @@ const axios = require('axios');
 let calculate = require('./public/js/calculate');
 const myAPIkey = "c9254300-544f-11ec-afc6-75865f49995f";
 
-let count = 0;
-
 // express defined to app
 const app = express();
 
@@ -23,7 +21,6 @@ app.use(
 
 // route
 app.get("/", (req, res) => {
-    res.cookie("count", count++);
 
     axios.get(`https://freecurrencyapi.net/api/v2/latest?apikey=${myAPIkey}`)
         .then((response) => {
@@ -62,13 +59,14 @@ app.post("/", (req, res) => {
 
             let asArray = Object.entries(currencies);
 
-            asArray.filter(([key, value]) => {
+            let deneme = asArray.filter(([key, value]) => {
                 if (key == to) {
-                    console.log(`adı=${key} - value=${value}`)
-                    console.log(currValue)
-                    calculate(currValue, value)
+                    console.log(`adı=${key} - value=${value}`);
+                    return calculate(currValue, value);
                 }
+                
             })
+            console.log(deneme)
 
             //let newScore = Object.fromEntries(isTOEqualToAPI);
             //console.log(newScore)
