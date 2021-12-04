@@ -10,14 +10,20 @@ class SelectCurrency {
     }
 
     leftSelectChange(e) {
+        let selectedValue = e.target.value;
+
         console.log(e.target.value);
     }
+
     rightSelectChange(e) {
+        let selectedValue = e.target.value;
+
         console.log(e.target.value);
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    let selectCurrency = new SelectCurrency;
+    let selectCurrency = new SelectCurrency();
     selectCurrency.allEventListeners();
 })
