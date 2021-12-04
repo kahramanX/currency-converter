@@ -1,6 +1,8 @@
 const express = require('express');
 const axios = require('axios');
-const myAPIkey = "c9254300-544f-11ec-afc6-75865f49995f"
+
+const myAPIkey = "c9254300-544f-11ec-afc6-75865f49995f";
+
 let count = 0;
 
 // express defined to app
@@ -35,7 +37,6 @@ app.get("/", (req, res) => {
         .catch((err) => {
             console.log(err)
         })
-    res.render("index");
 })
 
 app.post("/", (req, res) => {

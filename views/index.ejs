@@ -18,22 +18,24 @@
         <input type="number" min="0" name="" id="curr">
 
         <select name="curr" id="curr">
+            <option value="choose" selected>choose</option>
+
+            <% currencies.forEach(function(curr){ %>
+            <option value="<%= curr %>"><%= curr %></option>
+            <% }) %>
+
+        </select>
+
+        ->
+
+        <input type="number" min="0" name="" id="curr-2">
+
+        <select name="curr-2" id="curr-2">
             <option value="" selected>choose</option>
-            <option value="EUR">EUR</option>
-            <option value="CAD">CAD</option>
-            <option value="AVAX">AVAX</option>
-          </select>
-          
-          ->
-
-          <input type="number" min="0" name="" id="curr-2">
-
-          <select name="curr-2" id="curr-2">
-              <option value="" selected>choose</option>
-              <option value="EUR">EUR</option>
-              <option value="CAD">CAD</option>
-              <option value="AVAX">AVAX</option>
-            </select>
+            <% currencies.forEach(function(curr){ %>
+            <option value="<%= curr %>"><%= curr %></option>
+            <% }) %>
+        </select>
 
 
     </div>
