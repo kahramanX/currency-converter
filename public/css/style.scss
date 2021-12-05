@@ -22,12 +22,11 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-@include glassmorphism-effect;
-
 body {
     color: rgb(255, 255, 255);
     font-family: "Inter";
     background: url("../images/wallpaper.jpg");
+    user-select: none;
 }
 
 // app
@@ -99,7 +98,24 @@ body {
         padding-bottom: 10px;
         margin-top: 50px;
         width: 100%;
+        height: 50px;
         font-weight: inherit;
+        cursor: pointer;
+        transition: border 0.3s;
+        transition: background-color 0.3s;
+
+        &:hover {
+            opacity: 2;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+        }
+
+        &:disabled {
+            border: 5px solid rgba(255, 0, 0, 0.3);
+            cursor: not-allowed;
+            background-color: rgba(133, 0, 0, 0.2);
+            //color: rgba(255, 255, 255, 0.582);
+
+        }
     }
 }
 
@@ -120,6 +136,8 @@ body {
     transform: translate(-50%, 200%);
 
     p {
+        user-select: all;
+
         &:not(:last-child) {
             margin-right: 40px;
         }

@@ -9,6 +9,10 @@ body {
   color: white;
   font-family: "Inter";
   background: url("../images/wallpaper.jpg");
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .container {
@@ -19,7 +23,6 @@ body {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 20px 40px 20px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,6 +34,7 @@ body {
           align-items: center;
   font-size: 2em;
   font-weight: 800;
+  padding: 20px 40px 20px 40px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -98,13 +102,6 @@ body {
 }
 
 .container select option {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
   color: black;
 }
 
@@ -122,7 +119,24 @@ body {
   padding-bottom: 10px;
   margin-top: 50px;
   width: 100%;
+  height: 50px;
   font-weight: inherit;
+  cursor: pointer;
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.container button:hover {
+  opacity: 2;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+.container button:disabled {
+  border: 5px solid rgba(255, 0, 0, 0.3);
+  cursor: not-allowed;
+  background-color: rgba(133, 0, 0, 0.2);
 }
 
 .result {
@@ -150,6 +164,13 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, 200%);
           transform: translate(-50%, 200%);
+}
+
+.result p {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
 }
 
 .result p:not(:last-child) {
