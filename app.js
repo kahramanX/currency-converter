@@ -55,28 +55,29 @@ app.post("/", (req, res) => {
         })
         .then((response) => {
 
-            let currencies = response.data.data;
+            let allCurrencies = Object.entries(response.data.data);
 
-            let asArrayOfCurrencies = Object.entries(currencies);
+            let currenciesForEJS = Object.keys(response.data.data);
+
+            //let asArrayOfCurrencies = Object.entries(currencies);
 
             //console.log(Object.fromEntries(isTOEqualToAPI))
             //let newScore = Object.fromEntries(isTOEqualToAPI);
             //console.log(newScore)
 
-            for ([key, value] of asArrayOfCurrencies) {
+            for ([key, value] of allCurrencies) {
                 if (key == to) {
                     console.log(`to = ${key} - price = ${value}`);
 
                     let sum = calculate(currValue, value);
 
                     console.log(`sum = ${sum}`);
-                    let currrencies = [];
-                    res.render("index", {currencies, sum})
 
+                    let currencies = currenciesForEJS;
+
+                    res.render("index", {currencies, sum})
                 }
             }
-            console.log(sum);
-            //res.render("index", {sum})
         })
         .catch((error) => {
             console.log(error)

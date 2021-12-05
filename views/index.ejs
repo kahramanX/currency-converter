@@ -31,7 +31,7 @@
                 <option value="choose" selected disabled>choose</option>
 
                 <% for (let curr in currencies){ %>
-                <option value="<%= curr %>"><%= curr %></option>
+                <option value="<%= currencies[curr] %>"><%= currencies[curr] %></option>
                 <% } %>
             </select>
 
@@ -41,7 +41,7 @@
                 <option value="choose" selected disabled>choose</option>
 
                 <% for (let curr in currencies){ %>
-                    <option value="<%= curr %>"><%= curr %></option>
+                    <option value="<%= currencies[curr] %>"><%= currencies[curr] %></option>
                     <% } %>
             </select>
 
@@ -50,9 +50,12 @@
     </div>
     <div class="result">
         <h3>Result:</h3>
-        <% if(sum === Number) {%>
+
+        <% if(sum) {%>
             <h1><%=sum %> </h1>
-            <% } %>  
+            <% } else {%>  
+                <h1>olmadı</h1>
+                <% } %> 
 
     </div>
 
