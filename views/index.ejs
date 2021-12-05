@@ -24,38 +24,41 @@
 
     <div class="container">
         <form action="/" method="post">
-            <h3>From:</h3>
 
-            <input type="number" min="0" name="currValue" id="from">
-            <select name="from" id="from">
-                <option value="choose" selected disabled>choose</option>
+            <p>From:</p>
+            <div class="from-container">
+                <input type="number" min="0" name="currValue" id="from">
+                <select name="from" id="from">
+                    <option value="choose" selected disabled>choose</option>
 
-                <% for (let curr in currencies){ %>
-                <option value="<%= currencies[curr] %>"><%= currencies[curr] %></option>
-                <% } %>
-            </select>
-
-            <h3>TO:</h3>
-
-            <select name="to" id="to">
-                <option value="choose" selected disabled>choose</option>
-
-                <% for (let curr in currencies){ %>
+                    <% for (let curr in currencies){ %>
                     <option value="<%= currencies[curr] %>"><%= currencies[curr] %></option>
                     <% } %>
-            </select>
+                </select>
+            </div>
 
+            <div class="to-container">
+                <p>TO:</p>
+
+                <select name="to" id="to">
+                    <option value="choose" selected disabled>choose</option>
+
+                    <% for (let curr in currencies){ %>
+                    <option value="<%= currencies[curr] %>"><%= currencies[curr] %></option>
+                    <% } %>
+                </select>
+            </div>
             <button>Convert</button>
         </form>
     </div>
     <div class="result">
-        <h3>Result:</h3>
+        <p>Result:</p>
 
         <% if(sum) {%>
-            <h1><%=sum %> </h1>
-            <% } else {%>  
-                <h1>olmadı</h1>
-                <% } %> 
+        <p><%=sum %> </p>
+        <% } else {%>
+        <p>error</p>
+        <% } %>
 
     </div>
 

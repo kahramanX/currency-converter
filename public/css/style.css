@@ -6,13 +6,20 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  color: white;
+  font-family: "Inter";
+  background: url("../images/wallpaper.jpg");
 }
 
 .container {
-  width: 40vw;
-  height: 20vh;
-  border: 1px solid red;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px 20px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,21 +29,111 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 2em;
+  font-weight: 800;
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+}
+
+.container .from-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.container .to-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .to-container select {
+  margin-left: 15px;
 }
 
 .container input {
-  width: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 200px;
+  font-size: 1em;
+  text-align: center;
+  margin-right: 15px;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.container select {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: inherit;
+  font-size: 0.5em;
+  padding: 5px 8px 5px 8px;
+  font-weight: inherit;
+}
+
+.container select option {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+.container button {
+  color: inherit;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  width: 100%;
+  font-weight: inherit;
 }
 
 .result {
-  width: 40vw;
-  height: 20vh;
-  border: 1px solid blue;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px 20px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,10 +143,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 800;
+  font-size: 2em;
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 200%);
+          transform: translate(-50%, 200%);
+}
+
+.result p:not(:last-child) {
+  margin-right: 40px;
 }
 /*# sourceMappingURL=style.css.map */
