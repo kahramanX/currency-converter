@@ -7,6 +7,23 @@
 
 // reset css
 
+@mixin display-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin glassmorphism-effect {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@include glassmorphism-effect;
+
 body {
     color: rgb(255, 255, 255);
     font-family: "Inter";
@@ -16,19 +33,14 @@ body {
 // app
 .container {
     //Glassmorphism effect
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    @include glassmorphism-effect;
 
-    padding: 20px 40px 20px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //centered
+    @include display-flex;
+
     font-size: 2em;
     font-weight: 800;
+    padding: 20px 40px 20px 40px;
 
     //centered
     position: absolute;
@@ -37,31 +49,23 @@ body {
     transform: translate(-50%, -75%);
 
     .from-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        //centered
+        @include display-flex;
         margin-bottom: 30px;
     }
 
     .to-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        //centered
+        @include display-flex;
 
         select {
             margin-left: 15px;
         }
     }
 
-
     input {
         //Glassmorphism effect
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        @include glassmorphism-effect;
 
         width: 200px;
         font-size: 1em;
@@ -73,12 +77,7 @@ body {
 
     select {
         //Glassmorphism effect
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        @include glassmorphism-effect;
 
         color: inherit;
         font-size: 0.5em;
@@ -86,13 +85,6 @@ body {
         font-weight: inherit;
 
         option {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-
             color: black;
         }
     }
@@ -100,12 +92,7 @@ body {
     button {
         color: inherit;
         //Glassmorphism effect
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        @include glassmorphism-effect;
 
         font-size: 0.5em;
         padding-top: 10px;
@@ -118,17 +105,11 @@ body {
 
 .result {
     //Glassmorphism effect
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    @include glassmorphism-effect;
 
     padding: 20px 40px 20px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //centered
+    @include display-flex;
     font-weight: 800;
     font-size: 2em;
 
