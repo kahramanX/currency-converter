@@ -138,9 +138,14 @@ body {
     top: 50%;
     transform: translate(-50%, 200%);
 
-   p{
-       &:not(:last-child){
-           margin-right: 40px;
-       }
-   }
+    p {
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+}
+
+.github {
+    display: flex;
+    justify-content: center;
 }
