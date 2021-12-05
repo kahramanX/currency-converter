@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
             let currencies = Object.keys(response.data.data);
 
             res.render("index", {
-                currencies
+                currencies,sum:"0"
             });
         })
         .catch((err) => {
@@ -46,7 +46,7 @@ app.post("/", (req, res) => {
         to
     } = req.body;
 
-    console.log(currValue)
+    console.log("miktar= " + currValue)
 
     axios.get(`https://freecurrencyapi.net/api/v2/latest?apikey=${myAPIkey}`, {
             params: {
@@ -57,24 +57,32 @@ app.post("/", (req, res) => {
 
             let currencies = response.data.data;
 
-            let asArray = Object.entries(currencies);
+            let asArrayOfCurrencies = Object.entries(currencies);
 
-            let deneme = asArray.filter(([key, value]) => {
-                if (key == to) {
-                    console.log(`adı=${key} - value=${value}`);
-                    return calculate(currValue, value);
-                }
-                
-            })
-            console.log(deneme)
-
+            //console.log(Object.fromEntries(isTOEqualToAPI))
             //let newScore = Object.fromEntries(isTOEqualToAPI);
             //console.log(newScore)
+
+            for ([key, value] of asArrayOfCurrencies) {
+                if (key == to) {
+                    console.log(`to = ${key} - price = ${value}`);
+
+                    let sum = calculate(currValue, value);
+
+                    console.log(`sum = ${sum}`);
+                    let currrencies = [];
+                    res.render("index", {currencies, sum})
+
+                }
+            }
+            console.log(sum);
+            //res.render("index", {sum})
         })
         .catch((error) => {
             console.log(error)
         })
 
+    //res.render("index",{sum})
 })
 
 

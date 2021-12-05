@@ -28,20 +28,21 @@
 
             <input type="number" min="0" name="currValue" id="from">
             <select name="from" id="from">
-                <option value="choose" selected>choose</option>
+                <option value="choose" selected disabled>choose</option>
 
-                <% currencies.forEach(function(curr){ %>
+                <% for (let curr in currencies){ %>
                 <option value="<%= curr %>"><%= curr %></option>
-                <% }) %>
+                <% } %>
             </select>
 
             <h3>TO:</h3>
 
             <select name="to" id="to">
-                <option value="" selected>choose</option>
-                <% currencies.forEach(function(curr){ %>
-                <option value="<%= curr %>"><%= curr %></option>
-                <% }) %>
+                <option value="choose" selected disabled>choose</option>
+
+                <% for (let curr in currencies){ %>
+                    <option value="<%= curr %>"><%= curr %></option>
+                    <% } %>
             </select>
 
             <button>Convert</button>
@@ -49,6 +50,10 @@
     </div>
     <div class="result">
         <h3>Result:</h3>
+        <% if(sum === Number) {%>
+            <h1><%=sum %> </h1>
+            <% } %>  
+
     </div>
 
     <script type="module" src="../public/js/script.js"></script>
